@@ -1,0 +1,3 @@
+  (setq-default evil-escape-delay 0.2)
+  (spacemacs/declare-prefix "o" "custom")
+  (spacemacs/set-leader-keys "oq" 'delete-frame)

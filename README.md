@@ -7,5 +7,5 @@ Currently, you have to manually copy the dotfiles to their correct locations.
 ## Applications
 - [x] bash
 - [x] vim
-- [ ] spacemacs
+- [x] spacemacs
 - [ ] tmux
