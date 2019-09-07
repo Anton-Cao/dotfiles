@@ -8,4 +8,4 @@ if [ ! -f "~/.spacemacs" ]; then
     git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 fi
 
-echo "Copy contents of `spacemacs_user_config` into `.spacemacs`"
+echo "Copy contents of spacemacs_user_config into .spacemacs"

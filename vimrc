@@ -1,7 +1,6 @@
 set expandtab " expand tabs to spaces
 set number relativenumber " show line numbers
 set ruler " show where you are
-set list  " show trailing whitespace
 
 " keyboard shortcuts
 inoremap fd <ESC>

@@ -1,7 +1,6 @@
-# use C-a, since it's on the home row and easier to hit than C-b
-set-option -g prefix C-a
-unbind-key C-a
-bind-key C-a send-prefix
+set-option -g prefix C-o
+unbind-key C-o
+bind-key C-o send-prefix
 set -g base-index 1
 
 # Easy config reload
@@ -27,6 +26,9 @@ set -g status-left '[#S] '
 set-option -g status-right '%l:%M%p'
 set-window-option -g window-status-current-fg magenta
 set-option -g status-fg default
+set-option -g status-bg default
+set-option -g pane-active-border-fg default
+set-option -g pane-border-fg default
 
 # custom
 bind '"' split-window -c "#{pane_current_path}"
