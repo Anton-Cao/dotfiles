@@ -8,4 +8,4 @@ Currently, you have to manually copy the dotfiles to their correct locations.
 - [x] bash
 - [x] vim
 - [x] spacemacs
-- [ ] tmux
+- [x] tmux
