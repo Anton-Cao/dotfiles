@@ -14,7 +14,7 @@ alias goto="git checkout"
 alias gl="git log --graph --decorate --oneline"
 
 # necessary for spacemacs theme to display correctly
-export TERM=xterm-256colors
+export TERM=xterm-256color
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
