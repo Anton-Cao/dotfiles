@@ -23,8 +23,8 @@ bind-key l select-pane -R
 # Status Bar
 set-option -g status-interval 1
 set -g status-left-length 25
-set -g status-left '[#h:#S] '
-set-option -g status-right '%l:%M%p'
+set -g status-left '[#S] '
+set-option -g status-right '%l:%M%p (#H)'
 set-window-option -g window-status-current-fg magenta
 set-option -g status-fg default
 set-option -g status-bg default
