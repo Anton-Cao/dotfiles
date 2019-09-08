@@ -13,6 +13,9 @@ alias gb="git branch"
 alias goto="git checkout"
 alias gl="git log --graph --decorate --oneline"
 
+# necessary for spacemacs theme to display correctly
+export TERM=xterm-256colors
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
