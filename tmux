@@ -27,7 +27,7 @@ set -g status-left '[#S] '
 set-option -g status-right '%l:%M%p (#H)'
 set-window-option -g window-status-current-fg magenta
 set-option -g status-fg default
-set-option -g status-bg default
+set-option -g status-bg '#006030'
 set-option -g pane-active-border-fg default
 set-option -g pane-border-fg default
 
