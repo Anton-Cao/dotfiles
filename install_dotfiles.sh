@@ -7,7 +7,7 @@ if [ ! -f ~/.bashrc ]; then
     touch ~/.bashrc
 fi
 
-if [ -z $(fgrep -q bashrc ~/.bash_profile) ]; then
+if ! fgrep -q bashrc ~/.bash_profile; then
     echo "Sourcing .bashrc in .bash_profile";
     echo "source ~/.bashrc" >> ~/.bash_profile
 fi
@@ -19,7 +19,7 @@ else
     echo ".bashrc.local already exists"
 fi
 
-if [ -z $(fgrep -q bashrc.local ~/.bashrc) ]; then
+if ! fgrep -q local ~/.bashrc; then
     echo "Sourcing .bashrc.local in .bashrc"
     echo "source ~/.bashrc.local" >> ~/.bashrc
 fi
@@ -38,12 +38,11 @@ else
     echo ".vimrc.local already exists"
 fi
 
-if [ -z $(fgrep -q vimrc.local ~/.vimrc) ]; then
+if ! fgrep -q vimrc.local ~/.vimrc; then
     echo "Sourcing .vimrc.local in .vimrc";
     echo "source ~/.vimrc.local" >> ~/.vimrc
 fi
 
-# TMUX
 if [ ! -f ~/.tmux.conf ]; then
     echo "Creating .tmux.conf file";
     touch ~/.tmux.conf
@@ -56,7 +55,7 @@ else
     echo ".tmux.conf.local already exists"
 fi
 
-if [ -z $(fgrep -q tmux.conf.local ~/.tmux.conf) ]; then
+if ! fgrep -q tmux.conf.local ~/.tmux.conf; then
     echo "Sourcing .tmux.conf.local in .tmux.conf";
     echo "source-file ~/.tmux.conf.local" >> ~/.tmux.conf
 fi
