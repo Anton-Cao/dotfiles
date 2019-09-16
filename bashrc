@@ -13,6 +13,10 @@ alias gb="git branch"
 alias goto="git checkout"
 alias gl="git log --graph --decorate --oneline"
 
+# emacs takes too long to boot up
+export EDITOR="vim"
+export VISUAL="vim"
+
 # necessary for spacemacs theme to display correctly
 export TERM=xterm-256color
 
