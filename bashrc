@@ -1,4 +1,5 @@
 alias c="clear"
+alias g="grep -Hn"
 alias e="emacsclient -t"
 alias ta="tmux a -t"
 alias ts="tmux new -s"
@@ -10,8 +11,6 @@ alias gc="git commit"
 alias gd="git diff"
 alias gpush="git push"
 alias gpull="git pull"
-alias gb="git branch"
-alias goto="git checkout"
 alias gl="git log --graph --decorate --oneline"
 
 # emacs takes too long to boot up
