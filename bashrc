@@ -1,5 +1,5 @@
 alias c="clear"
-alias e="emacsclient -t"
+alias e="emacs -nw"
 alias ta="tmux a -t"
 alias ts="tmux new -s"
 alias tl="tmux ls"

@@ -25,11 +25,10 @@ set-option -g status-interval 1
 set -g status-left-length 25
 set -g status-left '[#S] '
 set-option -g status-right '%l:%M%p (#H)'
-set-window-option -g window-status-current-fg magenta
-set-option -g status-fg default
-set-option -g status-bg '#006030'
-set-option -g pane-active-border-fg default
-set-option -g pane-border-fg default
+set-window-option -g window-status-current-style fg=magenta
+set-option -g status-style fg=default bg='#3664ad'
+set-option -g pane-active-border-style fg=default
+set-option -g pane-border-style fg=default
 
 # custom
 bind '"' split-window -c "#{pane_current_path}"
