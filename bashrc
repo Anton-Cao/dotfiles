@@ -13,6 +13,13 @@ alias gpush="git push"
 alias gpull="git pull"
 alias gl="git log --graph --decorate --oneline"
 
+cdu(){
+  for i in $(seq 1 $1);
+  do
+    cd ..
+  done
+}
+
 # emacs takes too long to boot up
 export EDITOR="vim"
 export VISUAL="vim"
