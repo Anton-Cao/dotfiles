@@ -41,7 +41,7 @@ if [[ $SHELL == *zsh ]]; then
     fi
     
     source ~/.zshrc
-elif [[ SHELL == *bash ]]; then
+elif [[ $SHELL == *bash ]]; then
     echo "BASH";
     if [ ! -f ~/.bashrc ]; then
         echo "Creating .bashrc file";
