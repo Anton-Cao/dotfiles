@@ -23,7 +23,7 @@ bind-key l select-pane -R
 # Status Bar
 set-option -g status-interval 1
 set -g status-left-length 25
-set -g status-left '[#S] '
+set -g status-left '[#S, Ctrl+A] '
 set-option -g status-right '%l:%M%p (#H)'
 set-window-option -g window-status-current-style fg=magenta
 set-option -g status-fg white
