@@ -25,11 +25,11 @@
 ### Segments of the prompt, default order declaration
 
 typeset -aHg AGNOSTER_PROMPT_SEGMENTS=(
+    prompt_lambda
     prompt_status
     prompt_context
     prompt_virtualenv
     prompt_dir
-    prompt_git
     prompt_end
 )
 
@@ -80,6 +80,10 @@ prompt_end() {
 ### Prompt components
 # Each component will draw itself, and hide itself if no information needs to be shown
 
+prompt_lambda() {
+  prompt_segment red black " λ "
+}
+
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
   local user=`whoami`
@@ -116,7 +120,7 @@ prompt_git() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment blue $PRIMARY_FG ' %~ '
+  prompt_segment blue black ' %~ '
 }
 
 # Status:
