@@ -1,6 +1,6 @@
-set-option -g prefix C-o
-unbind-key C-o
-bind-key C-o send-prefix
+set-option -g prefix C-a
+unbind-key C-a
+bind-key C-a send-prefix
 set -g base-index 1
 
 # Easy config reload
@@ -26,7 +26,7 @@ set -g status-left-length 25
 set -g status-left '[#S] '
 set-option -g status-right '%l:%M%p (#H)'
 set-window-option -g window-status-current-style fg=magenta
-set-option -g status-fg default
+set-option -g status-fg white
 set-option -g status-bg '#301934'
 
 # custom
