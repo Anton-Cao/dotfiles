@@ -1,30 +1,76 @@
 BASH_FILE="$(pwd)/bashrc"
+ZSH_FILE="$(pwd)/zshrc"
+ZSH_THEME="$(pwd)/agnoster.zsh-theme"
 VIM_FILE="$(pwd)/vimrc"
 TMUX_FILE="$(pwd)/tmux"
 
-if [ ! -f ~/.bashrc ]; then
-    echo "Creating .bashrc file";
-    touch ~/.bashrc
-fi
+if [[ $SHELL == *zsh ]]; then
+    echo "ZSH";
+    if [ ! -f ~/.zshrc ]; then
+        echo "Creating .zshrc file";
+        touch ~/.zshrc
+    fi
+    
+    if ! fgrep -q zshrc ~/.zprofile; then
+        echo "Sourcing .zshrc in .zprofile";
+        echo "source ~/.zshrc" >> ~/.zprofile
+    fi
+    
+    if [ ! -f ~/.zshrc.local ]; then
+        echo "Linking .zshrc.local"
+        ln -s $ZSH_FILE ~/.zshrc.local 
+    else
+        echo ".zshrc.local already exists"
+    fi
 
-if ! fgrep -q bashrc ~/.bash_profile; then
-    echo "Sourcing .bashrc in .bash_profile";
-    echo "source ~/.bashrc" >> ~/.bash_profile
-fi
+    if [ ! -f ~/.zsh-theme.local ]; then
+        echo "Linking .zsh-theme.local"
+        ln -s $ZSH_THEME ~/.zsh-theme.local 
+    else
+        echo ".zsh-theme.local already exists"
+    fi
+    
+    if ! fgrep -q local ~/.zshrc; then
+        echo "Sourcing .zshrc.local in .zshrc"
+        echo "source ~/.zshrc.local" >> ~/.zshrc
+    fi
 
-if [ ! -f ~/.bashrc.local ]; then
-    echo "Linking .bashrc.local"
-    ln -s $BASH_FILE ~/.bashrc.local 
+    if ! fgrep -q theme ~/.zshrc; then
+        echo "Sourcing .zsh-theme.local in .zshrc"
+        echo "source ~/.zsh-theme.local" >> ~/.zshrc
+    fi
+    
+    source ~/.zshrc
+elif [[ SHELL == *bash ]]; then
+    echo "BASH";
+    if [ ! -f ~/.bashrc ]; then
+        echo "Creating .bashrc file";
+        touch ~/.bashrc
+    fi
+    
+    if ! fgrep -q bashrc ~/.bash_profile; then
+        echo "Sourcing .bashrc in .bash_profile";
+        echo "source ~/.bashrc" >> ~/.bash_profile
+    fi
+    
+    if [ ! -f ~/.bashrc.local ]; then
+        echo "Linking .bashrc.local"
+        ln -s $BASH_FILE ~/.bashrc.local 
+    else
+        echo ".bashrc.local already exists"
+    fi
+    
+    if ! fgrep -q local ~/.bashrc; then
+        echo "Sourcing .bashrc.local in .bashrc"
+        echo "source ~/.bashrc.local" >> ~/.bashrc
+    fi
+    
+    source ~/.bashrc
 else
-    echo ".bashrc.local already exists"
+    echo "UNRECOGNIZED SHELL $SHELL";
+    exit
 fi
 
-if ! fgrep -q local ~/.bashrc; then
-    echo "Sourcing .bashrc.local in .bashrc"
-    echo "source ~/.bashrc.local" >> ~/.bashrc
-fi
-
-source ~/.bashrc
 
 if [ ! -f ~/.vimrc ]; then
     echo "Creating .vimrc file";
