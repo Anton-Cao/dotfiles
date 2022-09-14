@@ -30,6 +30,7 @@ typeset -aHg AGNOSTER_PROMPT_SEGMENTS=(
     prompt_context
     prompt_virtualenv
     prompt_dir
+    prompt_git
     prompt_end
 )
 
@@ -121,6 +122,30 @@ prompt_git() {
 # Dir: current working directory
 prompt_dir() {
   prompt_segment blue black ' %~ '
+}
+
+prompt_git() {
+  local color ref
+  is_dirty() {
+    test -n "$(git status --porcelain --ignore-submodules)"
+  }
+  ref="$vcs_info_msg_0_"
+  if [[ -n "$ref" ]]; then
+    if is_dirty; then
+      color=yellow
+      ref="${ref} $PLUSMINUS"
+    else
+      color=green
+      ref="${ref} "
+    fi
+    if [[ "${ref/.../}" == "$ref" ]]; then
+      ref="$BRANCH $ref"
+    else
+      ref="$DETACHED ${ref/.../}"
+    fi
+    prompt_segment $color $PRIMARY_FG
+    print -n " $ref"
+  fi
 }
 
 # Status:
