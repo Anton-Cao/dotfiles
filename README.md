@@ -3,6 +3,8 @@ These dotfiles are meant to be used to bootstrap new machines. Currently, they a
 
 ## iTerm
 Appearance > General > Theme: `minimal`
+Font: Hack (size 14)
+Color Schema: Dracula
 
 ## How to use
 Run `install_spacemacs.sh` to install spacemacs (first make sure Emacs v24.4+ is installed) and then run `install_dotfiles.sh` which hopefully will put the dotfiles in the correct locations.
