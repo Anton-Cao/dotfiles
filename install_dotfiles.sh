@@ -16,28 +16,28 @@ if [[ $SHELL == *zsh ]]; then
         echo "source ~/.zshrc" >> ~/.zprofile
     fi
     
-    if [ ! -f ~/.zshrc.local ]; then
-        echo "Linking .zshrc.local"
-        ln -s $ZSH_FILE ~/.zshrc.local 
+    if [ ! -f ~/.zshrc.dotfiles ]; then
+        echo "Linking .zshrc.dotfiles"
+        ln -s $ZSH_FILE ~/.zshrc.dotfiles
     else
-        echo ".zshrc.local already exists"
+        echo ".zshrc.dotfiles already exists"
     fi
 
-    if [ ! -f ~/.zsh-theme.local ]; then
-        echo "Linking .zsh-theme.local"
-        ln -s $ZSH_THEME ~/.zsh-theme.local 
+    if [ ! -f ~/.zsh-theme.dotfiles ]; then
+        echo "Linking .zsh-theme.dotfiles"
+        ln -s $ZSH_THEME ~/.zsh-theme.dotfiles
     else
-        echo ".zsh-theme.local already exists"
+        echo ".zsh-theme.dotfiles already exists"
     fi
     
-    if ! fgrep -q local ~/.zshrc; then
-        echo "Sourcing .zshrc.local in .zshrc"
-        echo "source ~/.zshrc.local" >> ~/.zshrc
+    if ! fgrep -q dotfiles ~/.zshrc; then
+        echo "Sourcing .zshrc.dotfiles in .zshrc"
+        echo "source ~/.zshrc.dotfiles" >> ~/.zshrc
     fi
 
     if ! fgrep -q theme ~/.zshrc; then
-        echo "Sourcing .zsh-theme.local in .zshrc"
-        echo "source ~/.zsh-theme.local" >> ~/.zshrc
+        echo "Sourcing .zsh-theme.dotfiles in .zshrc"
+        echo "source ~/.zsh-theme.dotfiles" >> ~/.zshrc
     fi
     
     source ~/.zshrc
@@ -53,16 +53,16 @@ elif [[ $SHELL == *bash ]]; then
         echo "source ~/.bashrc" >> ~/.bash_profile
     fi
     
-    if [ ! -f ~/.bashrc.local ]; then
-        echo "Linking .bashrc.local"
-        ln -s $BASH_FILE ~/.bashrc.local 
+    if [ ! -f ~/.bashrc.dotfiles ]; then
+        echo "Linking .bashrc.dotfiles"
+        ln -s $BASH_FILE ~/.bashrc.dotfiles
     else
-        echo ".bashrc.local already exists"
+        echo ".bashrc.dotfiles already exists"
     fi
     
-    if ! fgrep -q local ~/.bashrc; then
-        echo "Sourcing .bashrc.local in .bashrc"
-        echo "source ~/.bashrc.local" >> ~/.bashrc
+    if ! fgrep -q dotfiles ~/.bashrc; then
+        echo "Sourcing .bashrc.dotfiles in .bashrc"
+        echo "source ~/.bashrc.dotfiles" >> ~/.bashrc
     fi
     
     source ~/.bashrc
@@ -77,16 +77,16 @@ if [ ! -f ~/.vimrc ]; then
     touch ~/.vimrc
 fi
 
-if [ ! -f ~/.vimrc.local ]; then
-    echo "Linking .vimrc.local";
-    ln -s $VIM_FILE ~/.vimrc.local 
+if [ ! -f ~/.vimrc.dotfiles ]; then
+    echo "Linking .vimrc.dotfiles";
+    ln -s $VIM_FILE ~/.vimrc.dotfiles
 else
-    echo ".vimrc.local already exists"
+    echo ".vimrc.dotfiles already exists"
 fi
 
-if ! fgrep -q vimrc.local ~/.vimrc; then
-    echo "Sourcing .vimrc.local in .vimrc";
-    echo "source ~/.vimrc.local" >> ~/.vimrc
+if ! fgrep -q vimrc.dotfiles ~/.vimrc; then
+    echo "Sourcing .vimrc.dotfiles in .vimrc";
+    echo "source ~/.vimrc.dotfiles" >> ~/.vimrc
 fi
 
 if [ ! -f ~/.tmux.conf ]; then
@@ -94,16 +94,16 @@ if [ ! -f ~/.tmux.conf ]; then
     touch ~/.tmux.conf
 fi
 
-if [ ! -f ~/.tmux.conf.local ]; then
-    echo "Linking .tmux.conf.local";
-    ln -s $TMUX_FILE ~/.tmux.conf.local 
+if [ ! -f ~/.tmux.conf.dotfiles ]; then
+    echo "Linking .tmux.conf.dotfiles";
+    ln -s $TMUX_FILE ~/.tmux.conf.dotfiles
 else
-    echo ".tmux.conf.local already exists"
+    echo ".tmux.conf.dotfiles already exists"
 fi
 
-if ! fgrep -q tmux.conf.local ~/.tmux.conf; then
-    echo "Sourcing .tmux.conf.local in .tmux.conf";
-    echo "source-file ~/.tmux.conf.local" >> ~/.tmux.conf
+if ! fgrep -q tmux.conf.dotfiles ~/.tmux.conf; then
+    echo "Sourcing .tmux.conf.dotfiles in .tmux.conf";
+    echo "source-file ~/.tmux.conf.dotfiles" >> ~/.tmux.conf
 fi
 
 tmux source-file ~/.tmux.conf
