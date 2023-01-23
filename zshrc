@@ -41,3 +41,7 @@ autoload -U compinit promptinit
 compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 fpath=(~/Documents/code/zsh-completions $fpath)
+
+# do not show user in shell prompt
+export DEFAULT_USER=`whoami`
+
