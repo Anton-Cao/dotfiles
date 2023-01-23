@@ -33,3 +33,5 @@ set-option -g status-bg '#301934'
 bind '"' split-window -c "#{pane_current_path}"
 bind % split-window -h -c "#{pane_current_path}"
 bind c new-window -c "#{pane_current_path}"
+bind Left swap-window -t -1\; select-window -t -1
+bind Right swap-window -t +1\; select-window -t +1
